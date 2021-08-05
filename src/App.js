@@ -1,20 +1,16 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import './Button.js';
 import Button from './Button.js';
+import Todo from './Todo.js';
+import Scoreboard from './Scoreboard/Scoreboard.js';
+
 
 function App() {
 
-  const click = ()=>{
-    alert("hello");
-  }
-
   return (
     <div className="App">
-      <div>
-        <Button btndabaya={click}>Himanshu</Button>
-        <Button btnColor="red">Yadav</Button>
-      </div>
+        {/* <Todo></Todo> */}
+        <Scoreboard></Scoreboard>
     </div>
   );
 }

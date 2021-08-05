@@ -9,7 +9,7 @@ function Button(props) {
 //   const btnColour = `${props.btnColour}` || "white";
 
   return (
-    <button style={{color:`${props.btnColor}`}} class="button" onClick={props.btndabaya}>{props.children}</button>
+    <button style={{color:`${props.btnColor}`}} class="button" onClick={props.onClick}>{props.children}</button>
   );
 }
 
