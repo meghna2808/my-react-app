@@ -1,6 +1,7 @@
 import Button from "../Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Scoreboard.css"
+import axios from "axios";
 
 function Scoreboard() {
     const [player1Score, setPlayer1Score] = useState(0);
@@ -14,6 +15,15 @@ function Scoreboard() {
         setwinner(i);
         setwinnerText(`The winner is Player ${i} !!!!`);
     }
+
+    const url = "https://jsonplaceholder.typicode.com/posts";
+    axios.get(url)
+    .then((response)=>{
+        console.log(response);
+    })
+    .catch(err=>{
+        console.log("error", err);
+    })
 
     const increasePlayer1Score = () => {
         if (player1Score + 1 === maxScore) {
@@ -44,7 +54,7 @@ function Scoreboard() {
             <img src="https://picsum.photos/200/" />
             <p><span class={winner === 1 ? "winner" : (winner < 1 ? "" : "loser")}>{player1Score}</span> to <span class={winner === 2 ? "winner" : (winner < 1 ? "" : "loser")}>{player2Score}</span></p>
             <select class="select-box" onChange={onChangeScore} disabled={disabledButton} value={maxScore}>
-                <option value="3" selected>3</option>
+                <option value="3">3</option>
                 <option value="5">5</option>
                 <option value="7">7</option>
             </select>
