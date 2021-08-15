@@ -15,7 +15,7 @@ function Todos() {
                 settodoData(response.data);
             })
             .catch(err=>{
-                console.log(error);
+                console.log(err);
             });
     }, []);
 

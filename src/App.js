@@ -4,6 +4,7 @@ import './App.css';
 // import Todo from './Todo.js';
 // import Scoreboard from './Scoreboard/Scoreboard.js';
 import Todos from './AxiosApiCall/Todos.js';
+import Todo from './TodoApp/Todo';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         {/* <Todo></Todo> */}
         {/* <Scoreboard></Scoreboard> */}
         <Todos/>
+        <Todo/>
     </div>
   );
 }
