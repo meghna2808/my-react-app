@@ -1,6 +1,7 @@
 import Button from "../Button";
 import { useState, useEffect } from "react";
 import "./TodoApp2.css";
+import axios from "axios";
 
 function Todo2() {
     const [inputValue, setinputValue] = useState("");
@@ -10,6 +11,14 @@ function Todo2() {
         settodoList([...todoList, inputValue]);
         setinputValue("");
     }
+    useEffect(()=>{
+        const url="https://jsonplaceholder.typicode.com/todos/1";
+        axios.get(url)
+        .then(response =>{
+            settodoList([...todoList,response.data.title])
+
+        })
+    },[])
     const displaytodoList = () => {
         if (todoList.length == 0) return null;
         const abc =
