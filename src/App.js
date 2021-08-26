@@ -6,7 +6,7 @@ import './App.css';
 import Todos from './AxiosApiCall/Todos.js';
 import Todo from './TodoApp/Todo';
 import Todo2  from './TodoApp2/TodoApp2';
-
+import People from './People/People';
 
 function App() {
 
@@ -16,7 +16,8 @@ function App() {
         {/* <Scoreboard></Scoreboard> */}
         {/* <Todos/> */}
         {/* <Todo/> */}
-        <Todo2/>
+        {/* <Todo2/> */}
+        <People/>
     </div>
   );
 }
