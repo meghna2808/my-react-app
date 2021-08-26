@@ -9,6 +9,15 @@ function Todo2() {
 
     const addtolist = () => {
         settodoList([...todoList, inputValue]);
+        const url="https://react-project-89f86-default-rtdb.firebaseio.com/people.json";
+        const postData = {
+            
+                relation:"xyz",
+                data: inputValue,
+                age:22
+            
+        };
+        axios.post(url, postData);
         setinputValue("");
     }
     useEffect(()=>{
@@ -16,6 +25,14 @@ function Todo2() {
         axios.get(url)
         .then(response =>{
             settodoList([...todoList,response.data.title])
+
+        })
+    },[])
+    useEffect(()=>{
+        const url="https://react-project-89f86-default-rtdb.firebaseio.com/people.json";
+        axios.get(url)
+        .then(response =>{
+            console.log("hello",response.data);
 
         })
     },[])
