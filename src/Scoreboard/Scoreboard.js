@@ -1,7 +1,7 @@
 import Button from "../Button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./Scoreboard.css"
-import axios from "axios";
+// import axios from "axios";
 
 function Scoreboard() {
     const [player1Score, setPlayer1Score] = useState(0);
@@ -16,34 +16,30 @@ function Scoreboard() {
         setwinnerText(`The winner is Player ${i} !!!!`);
     }
 
-    const url = "https://jsonplaceholder.typicode.com/posts";
-    axios.get(url)
-    .then((response)=>{
-        console.log(response);
-    })
-    .catch(err=>{
-        console.log("error", err);
-    })
-
     const increasePlayer1Score = () => {
-        if (player1Score + 1 === maxScore) {
+        if (player1Score + 1 == maxScore) {
             setPlayer1Score(player1Score + 1);
             setdisabledButton(true);
             showWinner(1);
-            return;
         } else if (player1Score + 1 < maxScore) {
             setPlayer1Score(player1Score + 1);
         }
     }
     const increasePlayer2Score = () => {
-        if (player2Score + 1 === maxScore) {
+        if (player2Score + 1 == maxScore) {
             setPlayer2Score(player2Score + 1);
             setdisabledButton(true);
             showWinner(2);
-            return;
         } else if (player2Score + 1 < maxScore) {
             setPlayer2Score(player2Score + 1);
         }
+    }
+
+    const reset = () =>{
+        setPlayer1Score(0);
+        setPlayer2Score(0);
+        setdisabledButton(false);
+        setwinner(-1);
     }
     const onChangeScore = (event) => {
         setmaxScore(event.target.value);
@@ -60,10 +56,10 @@ function Scoreboard() {
             </select>
             <Button disabled={disabledButton} onClick={increasePlayer1Score} >+1 Player1</Button>
             <Button disabled={disabledButton} onClick={increasePlayer2Score}>+1 Player2 </Button>
+            <Button onClick={reset}>Reset</Button>
         </div>
 
     );
-
 }
 
 export default Scoreboard;

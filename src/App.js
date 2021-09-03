@@ -2,22 +2,20 @@
 import './App.css';
 // import Button from './Button.js';
 // import Todo from './Todo.js';
-// import Scoreboard from './Scoreboard/Scoreboard.js';
+import Scoreboard from './Scoreboard/Scoreboard.js';
 import Todos from './AxiosApiCall/Todos.js';
 import Todo from './TodoApp/Todo';
-import Todo2  from './TodoApp2/TodoApp2';
-import People from './People/People';
 
 function App() {
 
   return (
     <div className="App">
         {/* <Todo></Todo> */}
-        {/* <Scoreboard></Scoreboard> */}
+        <Scoreboard></Scoreboard>
         {/* <Todos/> */}
         {/* <Todo/> */}
         {/* <Todo2/> */}
-        <People/>
+        {/* <People/> */}
     </div>
   );
 }

@@ -7,35 +7,36 @@ function Todo() {
     const [todoList, settodoList] = useState([]);
     const [inputValue, setinputValue] = useState("");
 
-    useEffect(() => {
-        const url = "https://jsonplaceholder.typicode.com/todos/1"
-        axios.get(url)
-            .then(response => {
-                settodoList([...todoList, response.data.title])
-            })
-
-    }, []);
+    const deleteTodo = i => {
+        const newTodoList = [...todoList];
+        newTodoList.splice(i,1);
+        settodoList(newTodoList);
+    }
 
     const displaytodoList = () => {
         if (todoList.length === 0) return null;
-        // console.log(todoList);
-        const abc =
+        const displayTodo =
             <ol>
                 {
                     todoList.map((element,i) => {
                         return(
                         <div className="todo-item-div">
                             <li>{element}</li>
-                            <Button onClick={(i)=>{
-                                console.log(i);
+                            <Button onClick={()=>{
+                                deleteTodo(i);
                             }}>Delete</Button>
                         </div>);
                     })
                 }
             </ol>;
-        return abc;
+        return displayTodo;
     }
     const addToDoItem = () => {
+        if(inputValue.trim() === ''){
+            alert("Please enter something !!");
+            setinputValue("");
+            return;
+        }
         settodoList([...todoList, inputValue]);
         setinputValue("");
     }
