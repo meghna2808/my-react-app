@@ -1,5 +1,7 @@
 .burger-container-div{
-    height: 60%;
+    padding-top: 10px;
+    height: 55%;
     background-color: white;
     width: 100%;
+    overflow-y: scroll;
 }

@@ -23,6 +23,7 @@ function Burger(props) {
         <div className="burger-container-div">
             <BurgerIngredient type="top-bread" />
             {showBurgerIngredients()}
+            {showBurgerIngredients().length === 0 ? <h3>Please add some ingredients...</h3> : null}
             <BurgerIngredient type="bottom-bread" />
         </div>
     );

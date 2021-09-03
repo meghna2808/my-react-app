@@ -7,19 +7,19 @@
     
 }
 .bottom-bread{
-    height:20%;
+    height:15%;
     width:30%;
     margin: 5px auto;
     background-color:rgb(230, 150, 3);
-    border-radius: 0 0 50% 50%;
+    border-radius: 0 0 30% 30%;
     
 }
 .bacon{
     height:3%;
-    width:35%;
+    width:30%;
     margin: 5px auto;
-    background-color:brown;
-    border-radius: 15px;
+    background-color:rgb(185, 22, 22);
+    /* border-radius: 15px; */
     
 }
 .salad{
@@ -34,7 +34,7 @@
     height:4%;
     width:33%;
     margin: 5px auto;
-    background-color: yellow;
+    background-color: #f4d004;
     border-radius: 15px;
     
 }
