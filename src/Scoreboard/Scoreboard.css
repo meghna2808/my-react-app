@@ -5,6 +5,7 @@
 }
 img{
     width:100%;
+    height:300px;
 }
 
 .select-box {
@@ -20,4 +21,14 @@ img{
 }
 .loser {
     color: red;
+}
+
+.score-values{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+}
+
+.scoreboard-cta{
+    margin-bottom: 5px;
 }

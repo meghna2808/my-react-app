@@ -1,8 +1,8 @@
 .container-div{
     border:2px solid black;
-    /* padding: 10px; */
     width: 300px;
     min-height: 350px;
+    background-color: beige;
 }
 .todo-item-div{
     display: flex;

@@ -35,7 +35,7 @@ function Scoreboard() {
         }
     }
 
-    const reset = () =>{
+    const reset = () => {
         setPlayer1Score(0);
         setPlayer2Score(0);
         setdisabledButton(false);
@@ -47,16 +47,21 @@ function Scoreboard() {
     return (
         <div class="container-div">
             <p class={winner < 1 ? "display-none" : ""}>{winnerText}</p>
-            <img src="https://picsum.photos/200/" />
-            <p><span class={winner === 1 ? "winner" : (winner < 1 ? "" : "loser")}>{player1Score}</span> to <span class={winner === 2 ? "winner" : (winner < 1 ? "" : "loser")}>{player2Score}</span></p>
-            <select class="select-box" onChange={onChangeScore} disabled={disabledButton} value={maxScore}>
-                <option value="3">3</option>
-                <option value="5">5</option>
-                <option value="7">7</option>
-            </select>
-            <Button disabled={disabledButton} onClick={increasePlayer1Score} >+1 Player1</Button>
-            <Button disabled={disabledButton} onClick={increasePlayer2Score}>+1 Player2 </Button>
-            <Button onClick={reset}>Reset</Button>
+            <img src="https://images.pexels.com/photos/3846048/pexels-photo-3846048.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" />
+
+            <div className="score-values">
+                <p><span class={winner === 1 ? "winner" : (winner < 1 ? "" : "loser")}>{player1Score}</span> to <span class={winner === 2 ? "winner" : (winner < 1 ? "" : "loser")}>{player2Score}</span></p>
+                <select class="select-box" onChange={onChangeScore} disabled={disabledButton} value={maxScore}>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div className="scoreboard-cta">
+                <Button disabled={disabledButton} onClick={increasePlayer1Score} >+1 Player1</Button>
+                <Button disabled={disabledButton} onClick={increasePlayer2Score}>+1 Player2 </Button>
+                <Button onClick={reset}>Reset</Button>
+            </div>
         </div>
 
     );

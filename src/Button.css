@@ -43,3 +43,8 @@ button:disabled{
 .todo-btn{
     height: 26px;
 }
+
+.nav-btn{
+    border:none;
+    border-radius: 0;
+}
