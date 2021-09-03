@@ -1,0 +1,19 @@
+.build-container-div{
+    height: 40%;
+    width: 100%;
+    background-color: rgb(199, 155, 13);
+}
+.ingredients-control-div{
+    /* border: 2px solid rgb(235, 181, 5); */
+    padding: 2px;
+    margin: 10px auto;
+    /* margin: auto; */
+    width: 200px;
+}
+.element-div{
+    display: flex;
+    justify-content: space-between;
+}
+.control-label{
+    width: 30px;
+}

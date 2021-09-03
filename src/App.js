@@ -5,17 +5,19 @@ import './App.css';
 import Scoreboard from './Scoreboard/Scoreboard.js';
 import Todos from './AxiosApiCall/Todos.js';
 import Todo from './TodoApp/Todo';
+import Burger from './BurgerBuilder/BurgerContainer';
 
 function App() {
 
   return (
     <div className="App">
         {/* <Todo></Todo> */}
-        <Scoreboard></Scoreboard>
+        {/* <Scoreboard></Scoreboard> */}
         {/* <Todos/> */}
         {/* <Todo/> */}
         {/* <Todo2/> */}
         {/* <People/> */}
+        <Burger/>
     </div>
   );
 }
