@@ -9,7 +9,7 @@ function Todo() {
 
     const deleteTodo = i => {
         const newTodoList = [...todoList];
-        newTodoList.splice(i,1);
+        newTodoList.splice(i, 1);
         settodoList(newTodoList);
     }
 
@@ -18,21 +18,23 @@ function Todo() {
         const displayTodo =
             <ol>
                 {
-                    todoList.map((element,i) => {
-                        return(
-                        <div className="todo-item-div">
-                            <li>{element}</li>
-                            <Button onClick={()=>{
-                                deleteTodo(i);
-                            }}>Delete</Button>
-                        </div>);
+                    todoList.map((element, i) => {
+                        return (
+                            <div className="todo-item-div">
+                                <li>{element}</li>
+                                <Button
+                                    customClassName="todo-btn"
+                                    onClick={() => {
+                                        deleteTodo(i);
+                                    }}>Delete</Button>
+                            </div>);
                     })
                 }
             </ol>;
         return displayTodo;
     }
     const addToDoItem = () => {
-        if(inputValue.trim() === ''){
+        if (inputValue.trim() === '') {
             alert("Please enter something !!");
             setinputValue("");
             return;
@@ -42,13 +44,14 @@ function Todo() {
     }
     return (
         <div className="container-div">
+            <h1>TODO APP</h1>
             <div>
                 <input placeholder="Type here"
                     value={inputValue}
                     onChange={(e) => {
                         setinputValue(e.target.value);
                     }} />
-                <Button onClick={addToDoItem}>Done</Button>
+                <Button customClassName="todo-btn" onClick={addToDoItem}>Done</Button>
             </div>
             {displaytodoList()}
         </div>
