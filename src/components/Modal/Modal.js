@@ -8,8 +8,13 @@ import "./Modal.css"
 
 
 function Modal(props) {
+    const classes=["modal-inner"]
+    if(props.size)
+    {
+        classes.push(props.size);
+    }
     return <div className="modal-container" style={{display: props.modalOpen ? "flex" : "none"}}>
-        <div className="modal-inner">
+        <div className={classes.join(" ")}>
             {props.children}
         </div>
     </div>

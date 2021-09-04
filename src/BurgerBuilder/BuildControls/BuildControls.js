@@ -41,7 +41,6 @@ function BuildControls(props) {
                 <p>Current price of Burger: <strong>₹{props.totalPrice}</strong></p>
                 {ingredientsControl()}
                 <Button customClassName="order-btn" onClick={props.onOrderClick}>ORDER</Button>
-
             </div>
 
         </div>

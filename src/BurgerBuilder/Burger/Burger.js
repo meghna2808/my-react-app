@@ -16,8 +16,6 @@ function Burger(props) {
         return arr;
     }
 
-
-    console.log("hii",props.ingredients);
     return (
         
         <div className="burger-container-div">
