@@ -84,7 +84,8 @@ function BurgerBuilder() {
         bacon: 50,
         cheese: 10,
         meat: 40,
-        sauce: 5
+        sauce: 5,
+        mayo: 10
     }
     const [ingredients, setingredients] = useState(initialIngredients);
     const [showModal, setshowModal] = useState(false);
